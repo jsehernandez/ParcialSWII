@@ -19,6 +19,7 @@ public class Ejercicio6Bean {
     private int N;
     private String res;
 
+    
     public String getRes() {
         return res;
     }
