@@ -1,0 +1,177 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Parcial</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+            <h:form>   
+                <h3>Parcial Ingenieria de Software II</h3>
+                <p:accordionPanel multiple="true">
+                    <p:tab title="Ejercicio 1">
+                        <h:panelGrid>
+                            <p:row>
+                                <p:column colspan="4">
+                                    <h:outputLabel   value="Ingrese los valores para saber cual es mayor"/>
+                                </p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column colspan="2">
+                                    <h:outputLabel   value="A: "/>
+                                    <p:inputText id="a" value="#{ejercicio1.a}"/>
+                                </p:column>
+                                <p:column colspan="2">
+                                    <h:outputLabel   value="B: "/>
+                                    <p:inputText id="b" value="#{ejercicio1.b}"/>
+                                </p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column colspan="2">
+                                    <p:commandButton value="Calcular" action="#{ejercicio1.Mayor()}" update="display" icon="ui-icon-check" />
+                                </p:column>
+                                <p:column colspan="2">
+                                    <h:outputText id="display" value="#{ejercicio1.res}" />
+                                </p:column>
+                            </p:row>
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Ejercicio 2">
+                        <h:panelGrid>
+                            <p:row>
+                                <p:column colspan="6">
+                                    <h:outputLabel   value="Ingrese los valores para saber cual es mayor"/>
+                                </p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column colspan="2">
+                                    <h:outputLabel   value="A: "/>
+                                    <p:inputText id="a2" value="#{ejercicio2.a}"/>
+                                </p:column>
+                                <p:column colspan="2">
+                                    <h:outputLabel   value="B: "/>
+                                    <p:inputText id="b2" value="#{ejercicio2.b}"/>
+                                </p:column>
+                                <p:column colspan="2">
+                                    <h:outputLabel   value="C: "/>
+                                    <p:inputText id="c2" value="#{ejercicio2.c}"/>
+                                </p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column colspan="3">
+                                    <p:commandButton value="Calcular" action="#{ejercicio2.Mayor()}" update="display2" icon="ui-icon-check" />
+                                </p:column>
+                                <p:column colspan="3">
+                                    <h:outputText id="display2" value="#{ejercicio2.res}" />
+                                </p:column>
+                            </p:row>
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Ejercicio 3">
+                        <h:panelGrid columns="4" cellpadding="5">
+                            <h:outputLabel   value="De click en el boton para calcular la sumatoria de 1 a 10"/> 
+                            <p:commandButton value="Calcular" action="#{ejercicio3.sumatoria()}" update="display3" icon="ui-icon-check" />
+                            <h:outputText id="display3" value="#{ejercicio3.sumaT}" />
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Ejercicio 4">
+                        <h:panelGrid>
+                            <p:row> 
+                                <p:column colspan="4">
+                                    <h:outputLabel value="Ingrese los catetos para hallar la hipotenusa: "/> 
+                                </p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column colspan="2">
+                                    <h:outputLabel  for="a4" value="CatetoA: "/>
+                                    <p:inputText id="a4" value="#{ejercicio4.catA}"/>
+                                </p:column>
+                                <p:column colspan="2">
+                                    <h:outputLabel  for="b4" value="CatetoB: "/>
+                                    <p:inputText id="b4" value="#{ejercicio4.catB}"/>  
+                                </p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column colspan="2">
+                                    <p:commandButton value="Calcular" action="#{ejercicio4.hipotenusa()}" update="display4" icon="ui-icon-check" />
+                                </p:column>
+                                <p:column colspan="2">
+                                    <h:outputText id="display4" value="#{ejercicio4.res}" />
+                                </p:column>
+                            </p:row>
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Ejercicio 5">
+                        <h:panelGrid>
+                            <p:row>
+                                <p:column colspan="4"></p:column>
+                                <h:outputLabel   value="Ingrese los valores para hallar area o volumen: "/>
+                            </p:row>
+                            <p:row>
+                                <p:column colspan="2">
+                                    <h:outputLabel   value="Altura: "/>
+                                    <p:inputText id="a5" value="#{ejercicio5.h}"/>
+                                </p:column>
+                                <p:column colspan="2">
+                                    <h:outputLabel   value="Radio: "/>
+                                    <p:inputText id="b5" value="#{ejercicio5.r}"/>  
+                                </p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column colspan="2">
+                                    <p:commandButton value="Calcular Area" action="#{ejercicio5.area()}" update="display5" icon="ui-icon-check" />
+                                </p:column>
+                                <p:column colspan="2">
+                                    <p:commandButton value="Calcular volumen" action="#{ejercicio5.volumen()}" update="display5" icon="ui-icon-check" />
+                                </p:column>
+                            </p:row>
+                            <p:row>
+                                <p:column colspan="4">
+                                    <h:outputLabel   value="Resultado: "/>
+                                    <h:outputText id="display5" value="#{ejercicio5.res}" />
+                                </p:column>
+                            </p:row>
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Ejercicio 6">
+                        <h:panelGrid columns="4" cellpadding="5">
+                            <h:outputLabel   value="Ingrese el numero para saber si es par o impar: "/>
+                            <p:inputText id="a6" value="#{ejercicio6.n}"/>  
+                            <p:commandButton value="Calcular" action="#{ejercicio6.parImpar()}" update="display6" icon="ui-icon-check" />
+                            <h:outputText id="display6" value="#{ejercicio6.res}" />
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Ejercicio 7">
+                        <h:panelGrid columns="4" cellpadding="5">
+                            <h:outputLabel   value="Ingrese la nota para saber la calificación: "/>
+                            <p:inputText id="a7" value="#{ejercicio7.nota}"/> 
+                            <p:commandButton value="Calcular" action="#{ejercicio7.calificacion()}" update="display7" icon="ui-icon-check" />
+                            <h:outputText id="display7" value="#{ejercicio7.res}" />
+                        </h:panelGrid>
+                    </p:tab>
+                    <p:tab title="Ejercicio 8">
+                        <h:panelGrid columns="4" cellpadding="5">
+                            <h:outputLabel   value="Ingrese los valores a ordenar: "/>
+                            <p:inputText id="a8" value="#{ejercicio8.a}"/>
+                            <p:inputText id="b8" value="#{ejercicio8.b}"/>  
+                            <p:commandButton value="Calcular" action="#{ejercicio8.Ordenar()}" update="display8" icon="ui-icon-check" />
+                            <h:outputText id="display8" value="#{ejercicio8.res}" />
+                        </h:panelGrid>
+                    </p:tab>-->
+                </p:accordionPanel>
+            </h:form>
+        </h:body>
+
+    </f:view>
+</html>
+
+
+
